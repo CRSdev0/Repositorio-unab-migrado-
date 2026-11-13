@@ -1,0 +1,197 @@
+/* Estilos generales */
+:root {
+    --bg-dark-blue: #0b192c;
+    --bg-card-blue: #1e293b;
+    --border-blue: #334155;
+    --text-white: #ffffff;
+    --text-light-blue: #cbd5e1;
+    --btn-blue: #1e3a8a;
+    --btn-blue-hover: #2563eb;
+}
+
+body {
+    background-color: var(--bg-dark-blue) !important;
+    color: var(--text-white) !important;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.text-dark,
+.fw-bold,
+.fw-semibold {
+    color: var(--text-white) !important;
+}
+
+p, span, label,
+.text-secondary,
+.text-muted {
+    color: var(--text-light-blue) !important;
+}
+
+/* Navbar */
+nav.navbar, header.border-bottom {
+    background-color: #091424 !important;
+    border-color: var(--border-blue) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light-blue) !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--text-white) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--border-blue) !important;
+    background-color: #1e293b !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Contenedores y tarjetas */
+.logo-box,
+.box-presentation,
+.box-container,
+.box-registro,
+.card-product,
+.cart-box,
+.chart-img-container,
+.border-dark {
+    background-color: var(--bg-card-blue) !important;
+    border: 2px solid var(--border-blue) !important;
+    color: var(--text-white) !important;
+}
+
+.divider-col {
+    border-right: 2px solid var(--border-blue) !important;
+}
+
+@media (max-width: 767.98px) {
+    .divider-col {
+        border-right: none !important;
+        border-bottom: 2px solid var(--border-blue) !important;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Formularios */
+.input-placeholder-gray,
+.form-control,
+.form-select {
+    background-color: #091424 !important;
+    border: 1px solid var(--border-blue) !important;
+    color: #ffffff !important;
+}
+
+.input-placeholder-gray::placeholder,
+.form-control::placeholder {
+    color: #94a3b8 !important;
+}
+
+.form-select option {
+    background-color: #091424;
+    color: #ffffff;
+}
+
+/* Botones */
+.btn-gray-custom {
+    background-color: var(--btn-blue) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-gray-custom:hover {
+    background-color: var(--btn-blue-hover) !important;
+    border-color: #60a5fa !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-secondary {
+    border-color: #64748b !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+}
+
+.btn-dark {
+    background-color: #2563eb !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.btn-dark:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* Elementos de imagen */
+.card-product {
+    border: 1px solid var(--border-blue) !important;
+    border-radius: 12px;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.img-cover-box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-box {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1rem;
+}
+
+.logo-header {
+    max-height: 160px;
+    object-fit: contain;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
+.chart-img {
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+}
+
+/* Modales y avisos */
+.modal-content {
+    background-color: var(--bg-card-blue) !important;
+    color: var(--text-white) !important;
+    border: 1px solid var(--border-blue) !important;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--border-blue) !important;
+}
+
+.toast-container-custom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1080;
+}

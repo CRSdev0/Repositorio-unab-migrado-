@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito de Compras</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white border-bottom py-2 px-3 px-md-4 mb-4">
+        <div class="container-fluid">
+            <a href="index.html" class="btn btn-outline-secondary fw-semibold">
+                Inicio
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNavegacion">
+                <div class="navbar-nav align-items-md-center gap-2 gap-md-3">
+                    <a href="productos.html" class="nav-link text-secondary fw-semibold">Productos</a>
+                    <a href="carrito.html" class="nav-link active text-dark fw-bold">Carrito</a>
+                    <a href="administracion.html" class="nav-link text-secondary fw-semibold">Administración</a>
+                    <a href="autenticacion.html" class="btn btn-outline-secondary px-3 py-1">Ingresar</a>
+                    <a href="crear_usuario.html" class="btn btn-dark px-3 py-1 text-white">Registro</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-4">
+        
+        <div class="mb-4">
+            <a href="javascript:history.back()" class="btn btn-gray-custom fs-5">
+                Regresar
+            </a>
+        </div>
+
+        <!-- Detalle del carrito -->
+        <div class="cart-box p-4 d-flex flex-column justify-content-between">
+            <div class="row g-0 flex-grow-1">
+                
+                <!-- Lista de artículos -->
+                <div class="col-12 col-md-6 divider-col pe-md-4">
+                    <h4 class="fw-bold mb-4">Nombre de Articulos</h4>
+                    <div id="contenedorNombres"></div>
+                </div>
+
+                <!-- Cantidad, precio y total -->
+                <div class="col-12 col-md-6 ps-md-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="fw-bold mb-0">Cantidad y Precio</h4>
+                        </div>
+                        <div id="contenedorPrecios"></div>
+                    </div>
+
+                    <div class="text-end mt-5 pt-4">
+                        <span class="fs-4 fw-bold">Total: </span>
+                        <span class="fs-4 fw-bold text-dark" id="montoTotal">$0</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="d-flex justify-content-end gap-3 mt-4">
+            <button type="button" class="btn btn-outline-secondary fs-5 px-4 py-2" id="btnLimpiar">
+                Limpiar
+            </button>
+            <button type="button" class="btn btn-gray-custom fs-5 px-5 py-2" id="btnPagar">
+                Pagar
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Script del carrito -->
+    <script>
+        function renderizarCarrito() {
+            const articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const contenedorNombres = document.getElementById("contenedorNombres");
+            const contenedorPrecios = document.getElementById("contenedorPrecios");
+            let totalGeneral = 0;
+
+            contenedorNombres.innerHTML = "";
+            contenedorPrecios.innerHTML = "";
+
+            if (articulosCarrito.length === 0) {
+                const pVacio = document.createElement("p");
+                pVacio.className = "text-secondary fst-italic fs-5 mb-0";
+                pVacio.innerText = "No hay artículos en el carrito.";
+                contenedorNombres.appendChild(pVacio);
+
+                const pVacioPrecio = document.createElement("p");
+                pVacioPrecio.className = "text-secondary fst-italic fs-5 mb-0 text-end";
+                pVacioPrecio.innerText = "$0";
+                contenedorPrecios.appendChild(pVacioPrecio);
+
+                document.getElementById("montoTotal").innerText = "$0";
+                return;
+            }
+
+            articulosCarrito.forEach((item) => {
+                const subtotal = item.precioUnitario * item.cantidad;
+                totalGeneral += subtotal;
+
+                const pNombre = document.createElement("p");
+                pNombre.className = "fs-5 fw-semibold mb-3";
+                pNombre.innerText = item.nombre;
+                contenedorNombres.appendChild(pNombre);
+
+                const pPrecio = document.createElement("p");
+                pPrecio.className = "fs-5 fw-semibold text-end mb-3";
+                pPrecio.innerText = `$${subtotal.toLocaleString("es-CL")} (${item.cantidad} un. a $${item.precioUnitario.toLocaleString("es-CL")})`;
+                contenedorPrecios.appendChild(pPrecio);
+            });
+
+            document.getElementById("montoTotal").innerText = `$${totalGeneral.toLocaleString("es-CL")}`;
+        }
+
+        document.getElementById("btnLimpiar").addEventListener("click", () => {
+            const articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            if (articulosCarrito.length === 0) {
+                alert("El carrito ya está vacío.");
+                return;
+            }
+            if (confirm("¿Deseas vaciar todos los artículos del carrito?")) {
+                localStorage.removeItem("carrito");
+                renderizarCarrito();
+            }
+        });
+
+        document.getElementById("btnPagar").addEventListener("click", () => {
+            const articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            if (articulosCarrito.length === 0) {
+                alert("El carrito está vacío. Agrega productos para continuar.");
+                return;
+            }
+            alert("¡Orden enviada al Backend con éxito!\nTotal a pagar: " + document.getElementById("montoTotal").innerText);
+            localStorage.removeItem("carrito");
+            renderizarCarrito();
+        });
+
+        document.addEventListener("DOMContentLoaded", renderizarCarrito);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

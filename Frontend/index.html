@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>El Asador - Inicio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Logo -->
+    <header class="container my-3">
+        <div class="logo-box d-flex justify-content-center align-items-center text-center">
+            <img src="Imagenes/Principal/logo transparente.png" alt="Logo El Asador" class="logo-header img-fluid mx-auto d-block">
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white border-bottom border-top py-2 px-3 px-md-4 mb-4">
+        <div class="container-fluid">
+            <a href="index.html" class="btn btn-outline-secondary fw-semibold active">
+                Inicio
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNavegacion">
+                <div class="navbar-nav align-items-md-center gap-2 gap-md-3">
+                    <a href="productos.html" class="nav-link text-secondary fw-semibold">Productos</a>
+                    <a href="carrito.html" class="nav-link text-secondary fw-semibold">Carrito</a>
+                    <a href="administracion.html" class="nav-link text-secondary fw-semibold">Administración</a>
+                    <a href="autenticacion.html" class="btn btn-outline-secondary px-3 py-1">Ingresar</a>
+                    <a href="crear_usuario.html" class="btn btn-dark px-3 py-1 text-white">Registro</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-4 mb-5">
+        <div class="row g-4">
+            
+            <!-- Presentación -->
+            <div class="col-12 col-md-6">
+                <div class="box-presentation">
+                    <h2 class="fw-bold mb-3 text-dark">El Asador</h2>
+                    <h5 class="text-secondary fw-semibold mb-3">Tradición, fuego y pasión en cada corte.</h5>
+                    <p class="text-secondary mb-4 leading-relaxed">
+                        Bienvenidos a <strong>El Asador</strong>. Nos especializamos en carnes a las brasas de la más alta calidad, preparadas con técnicas tradicionales de cocción lenta y sal de mar. Disfruta de una experiencia gastronómica única junto a los mejores cortes de la casa.
+                    </p>
+                    <div>
+                        <a href="productos.html" class="btn btn-gray-custom px-4 py-2">
+                            Ver Nuestra Carta ➔
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen 1 -->
+            <div class="col-12 col-md-6">
+                <div class="box-container">
+                    <img src="Imagenes/Principal/Imagen referencia.png" alt="Comida El Asador - Especialidad" class="img-cover-box">
+                </div>
+            </div>
+
+            <!-- Imagen 2 -->
+            <div class="col-12 col-md-6">
+                <div class="box-container">
+                    <img src="Imagenes/Principal/Imagen referencia 2.jpg" alt="Comida El Asador - Cortes a la parrilla" class="img-cover-box">
+                </div>
+            </div>
+
+            <!-- Imagen 3 -->
+            <div class="col-12 col-md-6">
+                <div class="box-container">
+                    <img src="Imagenes/Principal/Imagen referencia 3.jpeg" alt="Comida El Asador - Asado y guarniciones" class="img-cover-box">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

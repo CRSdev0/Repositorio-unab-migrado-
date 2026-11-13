@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración - Reporte de Ventas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white border-bottom py-2 px-3 px-md-4 mb-4">
+        <div class="container-fluid">
+            <a href="index.html" class="btn btn-outline-secondary fw-semibold">
+                Inicio
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNavegacion">
+                <div class="navbar-nav align-items-md-center gap-2 gap-md-3">
+                    <a href="productos.html" class="nav-link text-secondary fw-semibold">Productos</a>
+                    <a href="carrito.html" class="nav-link text-secondary fw-semibold">Carrito</a>
+                    <a href="administracion.html" class="nav-link active text-dark fw-bold">Administración</a>
+                    <a href="autenticacion.html" class="btn btn-outline-secondary px-3 py-1">Ingresar</a>
+                    <a href="crear_usuario.html" class="btn btn-dark px-3 py-1 text-white">Registro</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        
+        <!-- Reporte de ventas -->
+        <div class="row align-items-center mb-5 g-4">
+            
+            <div class="col-12 col-lg-6">
+                <div class="chart-img-container p-3 border shadow-sm">
+                    <img src="Imagenes/Administracion/grafico de barras.png" alt="Reporte gráfico de ventas" class="chart-img img-fluid">
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 ps-lg-4">
+                <h2 class="fw-bold mb-3 text-dark">Reporte de ventas</h2>
+                
+                <p class="text-secondary mb-3">
+                    Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:
+                </p>
+                
+                <p class="text-secondary leading-relaxed mb-0">
+                    Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. Qui international first-class nulla ut. Punctual adipisicing, essential lovely queen tempor eiusmod irure. Exclusive izakaya charming Scandinavian impeccable aute quality of life soft power pariatur Melbourne occaecat discerning. Qui wardrobe aliquip, et Porter destination Toto remarkable officia Helsinki excepteur Basset hound. Zürich sleepy perfect consectetur.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Botones de administración -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5 pt-3">
+            <button type="button" class="btn btn-gray-custom" onclick="alert('Módulo: Administrar clientes');">
+                Administrar clientes
+            </button>
+            <button type="button" class="btn btn-gray-custom" onclick="alert('Módulo: Administrar usuarios');">
+                Administrar usuarios
+            </button>
+            <a href="productos.html" class="btn btn-gray-custom text-decoration-none text-dark">
+                Administrar productos
+            </a>
+            <button type="button" class="btn btn-gray-custom" onclick="alert('Módulo: Generar orden de venta');">
+                Generar orden de venta
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

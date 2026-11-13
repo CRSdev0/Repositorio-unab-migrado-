@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crear Usuario - El Asador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white border-bottom py-2 px-3 px-md-4 mb-4">
+        <div class="container-fluid">
+            <a href="index.html" class="btn btn-outline-secondary fw-semibold">
+                Inicio
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNavegacion">
+                <div class="navbar-nav align-items-md-center gap-2 gap-md-3">
+                    <a href="productos.html" class="nav-link text-secondary fw-semibold">Productos</a>
+                    <a href="carrito.html" class="nav-link text-secondary fw-semibold">Carrito</a>
+                    <a href="administracion.html" class="nav-link text-secondary fw-semibold">Administración</a>
+                    <a href="autenticacion.html" class="btn btn-outline-secondary px-3 py-1">Ingresar</a>
+                    <a href="crear_usuario.html" class="btn btn-dark px-3 py-1 text-white active">Registro</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        
+        <h2 class="text-center fw-bold mb-5">Página de Registro</h2>
+
+        <!-- Formulario de registro -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9 col-xl-8">
+                
+                <div class="box-registro p-4 p-md-5">
+                    <h3 class="text-center fw-bold mb-4">Crear Usuario</h3>
+
+                    <form id="formRegistro" novalidate>
+                        
+                        <div class="row g-3">
+                            
+                            <div class="col-12 col-md-5">
+                                <label for="run" class="form-label fw-bold">RUN</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="run" 
+                                    placeholder="Ej: 12.345.678-9" 
+                                    required
+                                >
+                                <div class="invalid-feedback">Ingresa un RUN válido.</div>
+                            </div>
+
+                            <div class="col-12 col-md-7">
+                                <label for="nombre" class="form-label fw-bold">Nombre Completo</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="nombre" 
+                                    placeholder="Nombre y Apellido" 
+                                    required
+                                >
+                                <div class="invalid-feedback">El nombre es obligatorio.</div>
+                            </div>
+
+                            <div class="col-12 col-md-7">
+                                <label for="email" class="form-label fw-bold">
+                                    Correo Electrónico <span class="text-danger">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="email" 
+                                    placeholder="ejemplo@dominio.com" 
+                                    required
+                                >
+                                <div id="emailFeedback" class="invalid-feedback">
+                                    Por favor ingresa un correo válido.
+                                </div>
+                                <div class="valid-feedback">
+                                    ✓ Correo válido.
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-5">
+                                <label for="telefono" class="form-label fw-bold">Número Telefónico</label>
+                                <input 
+                                    type="tel" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="telefono" 
+                                    placeholder="+56 9 1234 5678" 
+                                    required
+                                >
+                                <div class="invalid-feedback">Ingresa un teléfono de contacto válido.</div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="fechaNacimiento" class="form-label fw-bold">Fecha de Nacimiento</label>
+                                <input 
+                                    type="date" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="fechaNacimiento" 
+                                    required
+                                >
+                                <div class="invalid-feedback">Selecciona una fecha válida.</div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="sexo" class="form-label fw-bold">Sexo</label>
+                                <select class="form-select input-placeholder-gray" id="sexo" required>
+                                    <option value="" selected disabled>Seleccione una opción</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Otro">Otro</option>
+                                    <option value="Prefiero no decir">Prefiero no decir</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor selecciona una opción.</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="direccion" class="form-label fw-bold">Dirección</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="direccion" 
+                                    placeholder="Calle, número, depto / casa" 
+                                    required
+                                >
+                                <div class="invalid-feedback">La dirección es obligatoria.</div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <label for="region" class="form-label fw-bold">Región</label>
+                                <select class="form-select input-placeholder-gray" id="region" required>
+                                    <option value="" selected disabled>Seleccione Región</option>
+                                    <option value="Metropolitana">Metropolitana de Santiago</option>
+                                    <option value="Valparaiso">Valparaíso</option>
+                                    <option value="Biobio">Biobío</option>
+                                    <option value="Araucania">La Araucanía</option>
+                                    <option value="Maule">Maule</option>
+                                    <option value="Otras">Otra Región</option>
+                                </select>
+                                <div class="invalid-feedback">Selecciona una región.</div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <label for="provincia" class="form-label fw-bold">Provincia</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="provincia" 
+                                    placeholder="Provincia" 
+                                    required
+                                >
+                                <div class="invalid-feedback">Ingresa la provincia.</div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <label for="comuna" class="form-label fw-bold">Comuna</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control input-placeholder-gray" 
+                                    id="comuna" 
+                                    placeholder="Comuna" 
+                                    required
+                                >
+                                <div class="invalid-feedback">Ingresa la comuna.</div>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center my-4 pt-3">
+                            <button type="submit" class="btn btn-gray-custom fs-5 px-5 py-2">
+                                Registrar Usuario
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="autenticacion.html" class="text-decoration-none text-dark fw-bold fs-6">
+                                ¿Ya tienes una cuenta? Iniciar Sesión
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="modalExito" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">¡Registro Exitoso!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <p class="fs-5 mb-2">El usuario ha sido registrado correctamente.</p>
+                    <p class="text-secondary small">Los datos se han guardado exitosamente.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="autenticacion.html" class="btn btn-dark px-4">Ir a Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de registro y validación -->
+    <script>
+        const inputEmail = document.getElementById("email");
+        const feedbackEmail = document.getElementById("emailFeedback");
+
+        const dominiosDescartables = [
+            "mailinator.com", "tempmail.com", "10minutemail.com", 
+            "throwawaymail.com", "guerrillamail.com", "yopmail.com", "fake.com"
+        ];
+
+        function validarCorreo(email) {
+            email = email.trim().toLowerCase();
+
+            const regexFormato = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!regexFormato.test(email)) {
+                return { valido: false, mensaje: "El formato de correo no es válido (ej: cliente@gmail.com)." };
+            }
+
+            const dominio = email.split("@")[1];
+            if (dominiosDescartables.includes(dominio)) {
+                return { valido: false, mensaje: "No se permiten correos temporales o desechables." };
+            }
+
+            const partesDominio = dominio.split(".");
+            const extension = partesDominio[partesDominio.length - 1];
+            if (extension.length < 2) {
+                return { valido: false, mensaje: "La extensión del dominio es inválida." };
+            }
+
+            return { valido: true, mensaje: "Correo válido." };
+        }
+
+        inputEmail.addEventListener("blur", () => {
+            const resultado = validarCorreo(inputEmail.value);
+            if (resultado.valido) {
+                inputEmail.classList.remove("is-invalid");
+                inputEmail.classList.add("is-valid");
+            } else {
+                inputEmail.classList.remove("is-valid");
+                inputEmail.classList.add("is-invalid");
+                feedbackEmail.innerText = resultado.mensaje;
+            }
+        });
+
+        document.getElementById("formRegistro").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const validacionCorreo = validarCorreo(inputEmail.value);
+            if (!validacionCorreo.valido) {
+                inputEmail.classList.remove("is-valid");
+                inputEmail.classList.add("is-invalid");
+                feedbackEmail.innerText = validacionCorreo.mensaje;
+                inputEmail.focus();
+                return;
+            }
+
+            if (!this.checkValidity()) {
+                this.classList.add("was-validated");
+                return;
+            }
+
+            const nuevoUsuario = {
+                run: document.getElementById("run").value,
+                nombre: document.getElementById("nombre").value,
+                email: inputEmail.value,
+                telefono: document.getElementById("telefono").value,
+                fechaNacimiento: document.getElementById("fechaNacimiento").value,
+                sexo: document.getElementById("sexo").value,
+                direccion: document.getElementById("direccion").value,
+                region: document.getElementById("region").value,
+                provincia: document.getElementById("provincia").value,
+                comuna: document.getElementById("comuna").value
+            };
+
+            let usuariosGuardados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
+            usuariosGuardados.push(nuevoUsuario);
+            localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosGuardados));
+
+            const modalExito = new bootstrap.Modal(document.getElementById("modalExito"));
+            modalExito.show();
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

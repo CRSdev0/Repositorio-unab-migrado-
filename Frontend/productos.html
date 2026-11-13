@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Productos - El Asador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white border-bottom py-2 px-3 px-md-4 mb-4">
+        <div class="container-fluid">
+            <a href="index.html" class="btn btn-outline-secondary fw-semibold">
+                Inicio
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNavegacion">
+                <div class="navbar-nav align-items-md-center gap-2 gap-md-3">
+                    <a href="productos.html" class="nav-link active text-dark fw-bold">Productos</a>
+                    <a href="carrito.html" class="nav-link text-secondary fw-semibold">
+                        Carrito <span id="badgeCarrito" class="badge bg-secondary ms-1">0</span>
+                    </a>
+                    <a href="administracion.html" class="nav-link text-secondary fw-semibold">Administración</a>
+                    <a href="autenticacion.html" class="btn btn-outline-secondary px-3 py-1">Ingresar</a>
+                    <a href="crear_usuario.html" class="btn btn-dark px-3 py-1 text-white">Registro</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-4">
+        <h2 class="fw-bold mb-4">Productos</h2>
+
+        <!-- Grilla de productos -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <!-- Producto 1 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Bife de Chorizo.jpg" alt="Bife de Chorizo" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Bife de Chorizo ($14.990)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        Corte grueso de 400g a las brasas, jugoso y sellado con sal de mar y hierbas.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(1, 'Bife de Chorizo', 14990)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Malaya de cerdo.jpg" alt="Malaya de cerdo" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Malaya de Cerdo ($11.990)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        Dorada a fuego vivo, crocante por fuera y tierna por dentro, terminada con limón.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(2, 'Malaya de Cerdo', 11990)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Paleta Cerdo.jpg" alt="Paleta de cerdo" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Paleta de Cerdo ($12.500)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        Cocción lenta a las brasas marinada con romero fresco, ajo y vino blanco.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(3, 'Paleta de Cerdo', 12500)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Entraña asada.jpg" alt="Entraña asada" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Entraña Asada ($16.990)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        El corte estrella del asador, suave, tierno y acompañado de chimichurri de la casa.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(4, 'Entraña Asada', 16990)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Costillar Ahumado.jpg" alt="Costillar Ahumado" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Costillar Ahumado ($13.990)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        Suave costillar a la parrilla con toque ahumado y salsa barbacoa criolla.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(5, 'Costillar Ahumado', 13990)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="col">
+                <div class="card-product p-3 h-100 d-flex flex-column text-center">
+                    <img src="Imagenes/Productos/Lomo vetado a las brasas.png" alt="Lomo vetado a las brasas" class="product-img mb-3">
+                    <h5 class="fw-bold mb-2">Lomo Vetado ($15.500)</h5>
+                    <p class="text-secondary small flex-grow-1 mb-3">
+                        Corte clásico con el marmoleo justo para una máxima terneza y jugosidad.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-gray-custom" onclick="agregarAlCarrito(6, 'Lomo Vetado', 15500)">
+                            🛒 Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Toast de confirmación -->
+    <div class="toast-container-custom">
+        <div id="toastAgregado" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMensaje">
+                    ¡Producto agregado al carrito!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de productos -->
+    <script>
+        function actualizarBadgeCarrito() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const totalUnidades = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            const badge = document.getElementById("badgeCarrito");
+            if (badge) {
+                badge.innerText = totalUnidades;
+            }
+        }
+
+        function agregarAlCarrito(id, nombre, precioUnitario) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            
+            const index = carrito.findIndex(item => item.id === id);
+            if (index !== -1) {
+                carrito[index].cantidad += 1;
+            } else {
+                carrito.push({
+                    id: id,
+                    nombre: nombre,
+                    precioUnitario: precioUnitario,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            actualizarBadgeCarrito();
+
+            const toastEl = document.getElementById("toastAgregado");
+            const mensajeEl = document.getElementById("toastMensaje");
+            mensajeEl.innerText = `¡Se agregó "${nombre}" al carrito!`;
+            const toast = new bootstrap.Toast(toastEl, { delay: 2500 });
+            toast.show();
+        }
+
+        document.addEventListener("DOMContentLoaded", actualizarBadgeCarrito);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
